@@ -1,21 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/application.js"></script>
-
+    <meta name="description" content="Mock shopping cart to demonstrate the use of jQuery - WDI7">
+    <meta name="author" content="Dominic Dunnett">
+    <meta name="keywords" content="WDI, GA, jQuery">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
+  
   <body>
     <section id="items-list" class="container">
+      
       <div class="row">
         <div class="cart-title col-xs-6 col-xs-offset-3">
           <h1>
@@ -23,114 +23,143 @@
           </h1>
         </div>
       </div>
-      <div class="row">
+      
+      <div class="row" id="top-of-list">
         <div class="item-name col-xs-6">
           Salmon
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="60.00">
           $60.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Tuna
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="50.00">
           $50.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Carp
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="40.00">
           $40.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Pork
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="50.00">
           $50.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Beef
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="40.00">
           $40.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Chicken
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="25.00">
           $25.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Cereal
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="45.00">
           $45.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Milk
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="20.00">
           $20.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button id="test" class= "delete-button">Delete</button>
         </div>
       </div>
+      
       <div class="row">
         <div class="item-name col-xs-6">
           Sugar
         </div>
-        <div class="item-price col-xs-3">
+        <div class="item-price col-xs-3" data-price="10.00">
           $10.00
         </div>
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
+          <button class= "delete-button">Delete</button>
+        </div> 
+
+      <div class="row">
+        <div class="item-name col-xs-6">
+          <input id="add-item">
         </div>
+        <div class="item-price col-xs-3">
+          <input id="add-price">
+        </div>
+        <div class="item-qty col-xs-3">
+          <button id="add-button">Add</button>
       </div>
+      
       <div class="row">
         <div class="col-xs-3 col-xs-offset-9">
           <button id="calc-prices-button" type="button" data-button='{"id": "3424"}' class="btn btn-success">
@@ -138,16 +167,21 @@
           </button>
         </div>
       </div>
+      
       <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
           <h1 class="total-price-label">
             Total Price:
           </h1>
           <div id="total-price">
-            $--.--
+            $00.00
           </div>
         </div>
       </div>
+
     </section>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/application.js"></script>
   </body>
 </html>
