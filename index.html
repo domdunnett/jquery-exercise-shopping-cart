@@ -10,6 +10,7 @@
     <meta name="author" content="Dominic Dunnett">
     <meta name="keywords" content="WDI, GA, jQuery">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href="css/custom.css" rel="stylesheet">
   </head>
   
@@ -17,7 +18,7 @@
     <section id="items-list" class="container">
       
       <div class="row">
-        <div class="cart-title col-xs-6 col-xs-offset-3">
+        <div class="cart-title col-xs-6">
           <h1>
           Shopping Cart
           </h1>
@@ -34,7 +35,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -48,7 +49,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -62,7 +63,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -76,7 +77,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -90,7 +91,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -104,7 +105,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -118,7 +119,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -132,7 +133,7 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button id="test" class= "delete-button">Delete</button>
+          <button id="test" class= "delete-button btn btn-default">Delete</button>
         </div>
       </div>
       
@@ -146,27 +147,36 @@
         <div class="item-qty col-xs-3">
           <label>QTY</label>
           <input class="quantity">
-          <button class= "delete-button">Delete</button>
+          <button class= "delete-button btn btn-default">Delete</button>
         </div> 
 
       <div class="row">
-        <div class="item-name col-xs-6">
-          <input id="add-item">
+        <div class="col-xs-3">
+          <input type="text" class="form-control" placeholder="Add an item..." id="add-item">
         </div>
-        <div class="item-price col-xs-3">
-          <input id="add-price">
+        <div class="col-xs-3 col-xs-offset-3">
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Price (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" id="add-price" placeholder="Amount">
+                <div class="input-group-addon">.00</div>
+              </div>
+            </div>
+        </form>
         </div>
         <div class="item-qty col-xs-3">
-          <button id="add-button">Add</button>
+          <button id="add-button" class="btn btn-default">Add</button>
       </div>
       
       <div class="row">
-        <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-xs-4 col-xs-offset-6">
           <h1 class="total-price-label">
             Total Price:
           </h1>
           <div id="total-price">
-            $00.00
+            $0.00
           </div>
         </div>
       </div>
