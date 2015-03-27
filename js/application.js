@@ -15,17 +15,20 @@ jQuery(document).ready(function() {
 	$('#add-button').click(function() {
 		var additionalItem = $('#add-item').val();
 		var additionalItemPrice = $('#add-price').val();
-	  $('#top-of-list').prepend("<div>"+ additionalItem + " at " +additionalItemPrice+"</div>").attr('class', 'row');
-	  // $('#top-of-list').prepend(
-	  // 		"<div>" + additionalItem + "</div>").attr('class', 'item-name col-xs-6'
-	  // 		);
-	  // $('#top-of-list').prepend(
-	  // 		"<div>" + additionalItemPrice + "</div>").attr('class', 'item-price col-xs-3'
-	  // );
-	  // $('#top-of-list').prepend(
-			// "<div>" + additionalItemPrice + "</div>").attr('class', 'item-price col-xs-3'
-			// );
-
+	  $('#top-of-list').before(
+	      "<div class=\"row\"> \
+	        <div class=\"item-name col-xs-6\">"
+	          + additionalItem +
+	        "</div> \
+	        <div class=\"item-price col-xs-3\" data-price=\"10.00\">"
+	          + "$" + additionalItemPrice +
+	        "</div> \
+	        <div class=\"item-qty col-xs-3\"> \
+	          <label>QTY</label> \
+	          <input class=\"quantity\"> \
+	          <button class= \"delete-button\">Delete</button> \
+        </div>" 
+	  	);
 	});
 
 	// This updates the total price with every keystroke
