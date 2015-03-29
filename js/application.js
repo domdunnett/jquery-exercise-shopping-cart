@@ -21,7 +21,7 @@ jQuery(document).ready(function() {
 	  $('#top-of-list').fadeIn(300, function() {
 	  	$(this).before(
 	      "<div class=\"row\"> \
-	        <div class=\"item-name col-xs-6\">"
+	        <div class=\"item-name col-xs-4\">"
 	          + additionalItem +
 	        "</div> \
 	        <div class=\"item-price col-xs-3\" data-price=\"" + additionalItemPrice + "\">"
@@ -31,7 +31,8 @@ jQuery(document).ready(function() {
 	          <label>QTY</label> \
 	          <input class=\"quantity\"> \
 	          <button class= \"delete-button btn btn-primary\"><span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span> Delete</button> \
-        </div>" 
+		      </div> \
+	        <div class=\"item-subtotal col-xs-2\">$0.00</div>"
 	  	)
 	  });
 	});
@@ -39,6 +40,8 @@ jQuery(document).ready(function() {
 	// This updates the total price with every keystroke
 	$(document).on('keyup', '.quantity', function() {
 
+		var currentInputQuantity = $(this);
+		calculateSubTotal(currentInputQuantity);
 		calculateTotal();
 
   });
@@ -62,6 +65,22 @@ jQuery(document).ready(function() {
 		
 		$('#total-price').text('$'+totalPrice.toFixed(2));
 		return totalPrice;
+	}
+
+	// This function calculates the subtotal on each keypress
+	function calculateSubTotal(inputQuantity) {
+
+		var itemPrice = Number(inputQuantity.parent().siblings('.item-price').data('price'));
+		var itemQuantity = Number(inputQuantity.val());
+		var subTotal = itemPrice * itemQuantity;
+
+		if (isNaN(subTotal) === false) {
+			inputQuantity.parent().siblings('.item-subtotal').text('$'+subTotal.toFixed(2));
+		}
+		else {
+			inputQuantity.parent().siblings('.item-subtotal').text('$0.00');
+		}
+
 	}
 
 });

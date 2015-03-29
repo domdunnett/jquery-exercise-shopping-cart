@@ -5,3 +5,8 @@
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+.row {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}
