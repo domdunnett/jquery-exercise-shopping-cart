@@ -15,12 +15,12 @@ jQuery(document).ready(function() {
 	});
 
 	// Dyanmically adds a new row in the smae style at the top of the list 
-	$('#add-button').click(function() {
+	$('#add-button').on('click', function() {
 		var additionalItem = $('#add-item').val();
 		var additionalItemPrice = Number($('#add-price').val()).toFixed(2);
 	  $('#top-of-list').fadeIn(300, function() {
 	  	$(this).before(
-	      "<div class=\"row\"> \
+	      "<div class=\"row\" id=\"top-of-list\"> \
 	        <div class=\"item-name col-xs-4\">"
 	          + additionalItem +
 	        "</div> \
