@@ -18,7 +18,8 @@ jQuery(document).ready(function() {
 	$('#add-button').click(function() {
 		var additionalItem = $('#add-item').val();
 		var additionalItemPrice = Number($('#add-price').val()).toFixed(2);
-	  $('#top-of-list').before(
+	  $('#top-of-list').fadeIn(300, function() {
+	  	$(this).before(
 	      "<div class=\"row\"> \
 	        <div class=\"item-name col-xs-6\">"
 	          + additionalItem +
@@ -29,9 +30,10 @@ jQuery(document).ready(function() {
 	        <div class=\"item-qty col-xs-3\"> \
 	          <label>QTY</label> \
 	          <input class=\"quantity\"> \
-	          <button class= \"delete-button btn btn-default\">Delete</button> \
+	          <button class= \"delete-button btn btn-primary\"><span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span> Delete</button> \
         </div>" 
-	  	);
+	  	)
+	  });
 	});
 
 	// This updates the total price with every keystroke
@@ -52,10 +54,12 @@ jQuery(document).ready(function() {
 		for (var i = 0; i < priceArray.length; i++) {
 			var item = Number($(priceArray[i]).data('price'));
 			var quantity = Number($(quantityArray[i]).val());
-			priceOfItems = item * quantity;	
-			totalPrice += priceOfItems;
+			if (isNaN(quantity) === false) {
+				priceOfItems = item * quantity;	
+				totalPrice += priceOfItems;
+			}
 		}
-
+		
 		$('#total-price').text('$'+totalPrice.toFixed(2));
 		return totalPrice;
 	}
